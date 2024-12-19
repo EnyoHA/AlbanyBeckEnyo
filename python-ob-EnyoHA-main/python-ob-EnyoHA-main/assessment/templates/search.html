@@ -1,0 +1,28 @@
+<html> 
+ <head> 
+   <title>Enyozon</title> 
+ </head> 
+ <body> 
+   <h1>Enyozon</h1>
+   <h2>search results</h2>
+   <!-- use double quotes and single quotes together to avoid errors -->
+   <form action="{{ url_for('searchBooks') }}" method="GET">
+        <input type="text" name="query" placeholder="Search books by title...">
+        <button type="submit">Search</button>
+    </form>
+   
+	{% if results %}
+	   <ul>
+			{% for book in results %}
+				<li>
+					<h3> <a href="{{ url_for('bookDeets', isbn = book.isbn) }}">{{ book.title }}</h3>
+					<p> Author: {{book.author }} </p>
+					<p> Price: £{{book.price }} </p>
+				</li>
+			{% endfor %}
+	   </ul>
+	{% else %}
+		<p> No results </p>
+	{% endif %}
+ </body> 
+</html> 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update User Details</title>
+</head>
+<body>
+    <h1>EnyoZon</h1>
+    <h1>Update User Details</h1>
+    <form action="{{ url_for('updateUser') }}" method="POST">
+		<label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ user.email }}" readonly><br>
+        <label for="password">New Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <label for="firstname">New First Name:</label>
+        <input type="text" id="firstname" name="firstname"><br>
+        <label for="lastname">New Last Name:</label>
+        <input type="text" id="lastname" name="lastname"><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="{{ url_for('userDeets') }}">Cancel</a>
+</body>
+</html>

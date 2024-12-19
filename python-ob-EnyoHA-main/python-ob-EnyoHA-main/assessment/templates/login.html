@@ -1,0 +1,13 @@
+<html>
+	<body>
+		<h1>EnyoZon</h1>
+		<h2>Log In</h2>
+		<a href="{{ url_for('index') }}">Back to Home</a>
+		<form action='/login' method='post'>
+			<p>{{ message }}</p>
+			<p><strong>Email:</p><input type='text' name='email'></p>
+			<p><strong>Password:</p><input name='password'></p>
+			<input type='submit' value='Login'>
+		</form>
+	</body>
+</html>

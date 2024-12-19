@@ -1,0 +1,29 @@
+<html> 
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Enyozon</title> 
+		<title>{{ book.title }}</title> 
+	</head> 
+ <body>
+	<h1>EnyoZon</h1>
+	<a href="{{ url_for('index') }}">Back to Home</a>
+	<h2>{{ book.title }}</h2>
+	<p> Author: {{book.author }} </p>
+	<p> Price: £{{book.price }} </p>
+	<!-- flask has a safe function built in to handle special characters
+	doesnt seem to actually work for me for some reason, jinja2 is installed
+	used -->
+	<p> Blurb: {{ book.overview }} </p>
+	<p> ISBN: {{ book.isbn }} </p>
+   </ul>
+   <form action="{{ url_for('addToBasket') }}" method="POST">
+		<input type="hidden" name="title" value="{{ book.title }}">
+		<input type="hidden" name="author" value="{{ book.author }}">
+		<input type="hidden" name="isbn" value="{{ book.isbn }}">
+		<input type="hidden" name="price" value="{{ book.price }}">
+		<input type="hidden" name="overview" value="{{ book.overview }}">
+		<button type="submit">Add to Basket</button>
+	</form>
+ </body> 
+</html> 

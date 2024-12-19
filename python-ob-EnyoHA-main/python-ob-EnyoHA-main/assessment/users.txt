@@ -1,0 +1,5 @@
+b@g.com,gravy,humperdink,grum
+gf@groovy.com,gravy,humble,top
+h@m.com,h,frump,huffelump
+p@q.com,pq,p,q
+l@k.com,lk,l,k

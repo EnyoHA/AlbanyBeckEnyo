@@ -1,0 +1,25 @@
+<html>
+<body>
+	<h1>EnyoZon</h1>
+	<h2>Basket</h2>
+	<a href="{{ url_for('index') }}">Back to Home</a>
+	<ul>
+		{% for item in basket %}
+			<li>
+				<h3> {{ item.title }} </h3>
+				<p>Author: {{ item.author }}</p>
+				<p>Price: £{{ item.price }}</p>
+				<form action="{{ url_for('removeFromBasket') }}" method="POST">
+                    <input type="hidden" name="isbn" value="{{ item.isbn }}">
+                    <button type="submit">Remove</button>
+                </form>
+			</li>
+		{% endfor %}
+	</ul>
+	<p>Total Price: £{{ totalPrice }}</p>
+	<form action="{{ url_for('checkout') }}" method="POST">
+		<button type="submit">Checkout</button>
+	</form>
+	<p>{{ message }}</p>
+</body>
+</html>

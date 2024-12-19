@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+</head>
+<body>
+	<h1>EnyoZon</h1>
+	<a href="{{ url_for('index') }}">Back to Home</a>
+    <h2>User Details</h2>
+    <p>Email: {{ user.email }}</p>
+    <p>First Name: {{ user.firstname }}</p>
+    <p>Last Name: {{ user.lastname }}</p>
+	<a href="{{ url_for('orderHistory') }}">Order history</a>
+	<a href="{{ url_for('updateUser') }}">Update Details</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
